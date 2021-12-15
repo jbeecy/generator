@@ -22,4 +22,11 @@ def password_generator(size = 16, chars = upper + lower + nums + special):
         return errorMessage
 
 def home(request):
-    return HttpResponse('<h3>Generated password: </h3>' + password_generator())
+    password = password_generator()
+    created_password = {
+        'password': password
+    }
+    return render(request, 'generator.html', created_password)
+
+# def home(request):
+#     return HttpResponse('<h3>Generated password: </h3>' + password_generator())
