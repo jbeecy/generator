@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.mil.js">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.mil.js"></script>
+
   <title>Password Generator</title>
-  <!-- {% load static %}
-  <link rel="stylesheet" href="{% static 'generator.css'%}"> -->
   <style>
     #gen-text{
       text-align: center;
@@ -28,7 +28,7 @@
   <br>
   <div id="gen-text">
     <h3>Your generated password is: </h3>
-    <p>{{password}}</p>
+    <p id="password">{{password}}</p>
     <br>
     <br>
     <form action="/" method="get" id="passwordForm">
