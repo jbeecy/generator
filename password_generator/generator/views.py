@@ -23,10 +23,17 @@ def password_generator(size = 16, chars = upper + lower + nums + special):
 
 def home(request):
     password = password_generator()
-    created_password = {
-        'password': password
-    }
-    return render(request, 'generator.html', created_password)
+    context = {}
+    if(request.GET.get('rerun')):
+        password = password_generator()
+        context["password"] = password
+    return render(request, 'generator.html', context)
 
-# def home(request):
-#     return HttpResponse('<h3>Generated password: </h3>' + password_generator())
+# def rerun(request):
+#     if(request.GET.get('rerun')):
+#         password = password_generator()
+#         created_password = {
+#             'password': password
+#         }
+#     return render(request, 'generator.html', created_password)
+
